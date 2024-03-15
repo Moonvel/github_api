@@ -1,23 +1,17 @@
 package git.api.selenide.tests;
 
 import git.api.selenide.model.Repos;
-import io.restassured.http.ContentType;
+import git.api.selenide.steps.ApiSteps;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-import static io.restassured.RestAssured.given;
+import java.util.Arrays;
 
 
 public class SelenideRepoTests {
+    ApiSteps apiSteps = new ApiSteps();
     @Test
-    public void getRepos(){
-        List<Repos> repos = given()
-                .baseUri("https://api.github.com")
-                .basePath("/users/selenide/repos")
-                .contentType(ContentType.JSON)
-                .when().get()
-                .then().statusCode(200)
-                .extract().jsonPath().getList(".", Repos.class);
+    public void getReposTest() {
+        Repos[] repos = apiSteps.getRepos();
     }
 }
+
