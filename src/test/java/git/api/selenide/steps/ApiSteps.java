@@ -4,14 +4,23 @@ import git.api.selenide.helper.ApiHelper;
 import git.api.selenide.model.Repos;
 import io.restassured.response.Response;
 
-
+import java.util.List;
 
 
 public class ApiSteps {
     ApiHelper apiHelper = new ApiHelper();
-    public Repos[] getRepos() {
-        Response response = apiHelper.getResponse();
+    public List<Repos> getRepos(String ownerName) {
+        String basePath = String.format("/users/%s/repos", ownerName);
+        Response response = apiHelper.getResponse(basePath);
         apiHelper.check(response);
-        return response.as(Repos[].class);
+        return List.of(response.as(Repos[].class));
+    }
+    public Repos getRepo(String fullName){
+        String basePath = String.format("repos/%s",fullName);
+        Response response = apiHelper.getResponse(basePath);
+        apiHelper.check(response);
+        return response.as(Repos.class);
     }
 }
+
+//https://api.github.com/repos/{owner}/{repo}

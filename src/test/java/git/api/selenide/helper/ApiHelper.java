@@ -14,8 +14,7 @@ import static org.hamcrest.CoreMatchers.anything;
 public class ApiHelper {
     PropsHelper propsHelper = PropsHelper.getInstance();
     RequestSpecification requestSpec = new RequestSpecBuilder()
-            .setBaseUri(propsHelper.getProperty("baseUri"))
-            .setBasePath(propsHelper.getProperty("basePath"))
+            .setBaseUri(propsHelper.getProperty("baseGitHubUri"))
             .setContentType(ContentType.JSON)
             .build();
     ResponseSpecification responseCheck = new ResponseSpecBuilder()
@@ -23,11 +22,10 @@ public class ApiHelper {
             .expectBody(anything())
             .build();
 
-    public Response getResponse() {
-        return given().spec(requestSpec).get();
+    public Response getResponse(String basePath) {
+        return given().spec(requestSpec).get(basePath);
     }
     public void check(Response response){
         response.then().spec(responseCheck);
     }
-
 }

@@ -168,4 +168,8 @@ public class Repos {
         this.watchers = watchers;
         this.default_branch = default_branch;
     }
+
+    public String getFull_name() {
+        return full_name;
+    }
 }
