@@ -1,10 +1,11 @@
 package git.api.selenide.model;
 
 import com.google.gson.annotations.SerializedName;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.Date;
-
+@Data
 public class Repos {
     public Integer id;
     public String node_id;
@@ -86,90 +87,4 @@ public class Repos {
     public Integer open_issues;
     public Integer watchers;
     public String default_branch;
-
-    public Repos(Integer id, String node_id, String name, String full_name, Boolean my_private, Owner owner, String html_url, String description, Boolean fork, String url, String forks_url, String keys_url, String collaborators_url, String teams_url, String hooks_url, String issue_events_url, String events_url, String assignees_url, String branches_url, String tags_url, String blobs_url, String git_tags_url, String git_refs_url, String trees_url, String statuses_url, String languages_url, String stargazers_url, String contributors_url, String subscribers_url, String subscription_url, String commits_url, String git_commits_url, String comments_url, String issue_comment_url, String contents_url, String compare_url, String merges_url, String archive_url, String downloads_url, String issues_url, String pulls_url, String milestones_url, String notifications_url, String labels_url, String releases_url, String deployments_url, Date created_at, Date updated_at, Date pushed_at, String git_url, String ssh_url, String clone_url, String svn_url, String homepage, Integer size, Integer stargazers_count, Integer watchers_count, String language, Boolean has_issues, Boolean has_projects, Boolean has_downloads, Boolean has_wiki, Boolean has_pages, Boolean has_discussions, Integer forks_count, Object mirror_url, Boolean archived, Boolean disabled, Integer open_issues_count, License license, Boolean allow_forking, Boolean is_template, Boolean web_commit_signoff_required, ArrayList<Object> topics, String visibility, Integer forks, Integer open_issues, Integer watchers, String default_branch) {
-        this.id = id;
-        this.node_id = node_id;
-        this.name = name;
-        this.full_name = full_name;
-        this.my_private = my_private;
-        this.owner = owner;
-        this.html_url = html_url;
-        this.description = description;
-        this.fork = fork;
-        this.url = url;
-        this.forks_url = forks_url;
-        this.keys_url = keys_url;
-        this.collaborators_url = collaborators_url;
-        this.teams_url = teams_url;
-        this.hooks_url = hooks_url;
-        this.issue_events_url = issue_events_url;
-        this.events_url = events_url;
-        this.assignees_url = assignees_url;
-        this.branches_url = branches_url;
-        this.tags_url = tags_url;
-        this.blobs_url = blobs_url;
-        this.git_tags_url = git_tags_url;
-        this.git_refs_url = git_refs_url;
-        this.trees_url = trees_url;
-        this.statuses_url = statuses_url;
-        this.languages_url = languages_url;
-        this.stargazers_url = stargazers_url;
-        this.contributors_url = contributors_url;
-        this.subscribers_url = subscribers_url;
-        this.subscription_url = subscription_url;
-        this.commits_url = commits_url;
-        this.git_commits_url = git_commits_url;
-        this.comments_url = comments_url;
-        this.issue_comment_url = issue_comment_url;
-        this.contents_url = contents_url;
-        this.compare_url = compare_url;
-        this.merges_url = merges_url;
-        this.archive_url = archive_url;
-        this.downloads_url = downloads_url;
-        this.issues_url = issues_url;
-        this.pulls_url = pulls_url;
-        this.milestones_url = milestones_url;
-        this.notifications_url = notifications_url;
-        this.labels_url = labels_url;
-        this.releases_url = releases_url;
-        this.deployments_url = deployments_url;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.pushed_at = pushed_at;
-        this.git_url = git_url;
-        this.ssh_url = ssh_url;
-        this.clone_url = clone_url;
-        this.svn_url = svn_url;
-        this.homepage = homepage;
-        this.size = size;
-        this.stargazers_count = stargazers_count;
-        this.watchers_count = watchers_count;
-        this.language = language;
-        this.has_issues = has_issues;
-        this.has_projects = has_projects;
-        this.has_downloads = has_downloads;
-        this.has_wiki = has_wiki;
-        this.has_pages = has_pages;
-        this.has_discussions = has_discussions;
-        this.forks_count = forks_count;
-        this.mirror_url = mirror_url;
-        this.archived = archived;
-        this.disabled = disabled;
-        this.open_issues_count = open_issues_count;
-        this.license = license;
-        this.allow_forking = allow_forking;
-        this.is_template = is_template;
-        this.web_commit_signoff_required = web_commit_signoff_required;
-        this.topics = topics;
-        this.visibility = visibility;
-        this.forks = forks;
-        this.open_issues = open_issues;
-        this.watchers = watchers;
-        this.default_branch = default_branch;
-    }
-
-    public String getFull_name() {
-        return full_name;
-    }
 }

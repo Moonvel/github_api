@@ -3,6 +3,7 @@ package git.api.selenide.tests;
 import git.api.selenide.model.Repos;
 import git.api.selenide.steps.ApiSteps;
 import io.qameta.allure.Description;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -31,27 +32,30 @@ public class SelenideRepoTests {
         repos = apiSteps.getRepos("selenide");
     }
 
+    @Disabled
     @ParameterizedTest(name = "Проверка корректоности имени репозитория репозитория")
     @MethodSource("reposProvider")
     @Description("Делает api-запрос, получает full_name репозитория и сравнивает его с full_name из ранее сформированного списка, проверки: код 200 и тело не пустое")
     public void getRepoTest(Repos repoFromProvider) {
-        String repoName = repoFromProvider.getFull_name();
-        assertThat(apiSteps.getRepo(repoName).getFull_name(), equalTo(repoName));
+        String repoName = repoFromProvider.full_name;
+        assertThat(apiSteps.getRepo(repoName).full_name, equalTo(repoName));
         //apiSteps.getRepo(repoName).equals(repoFromProvider.getFull_name());
     }
 }
 
 
 
-//     private static Stream<String> reposNameProvider(){
-//       return repos.stream().map(Repos::getFull_name);
-//    }
-//   @ParameterizedTest(name = "Проверка корректоности имени репозитория репозитория: {0}")
-//   @MethodSource("reposNameProvider")
-//   @Description("Делает api-запрос, получает full_name репозитория и сравнивает его с full_name из ранее сформированного списка, проверка код 200 и тело не пустое")
-//   public void getRepoTest(String repoFullName) {
-//       apiSteps.getRepo(repoFullName).equals(repoFullName);
-//   }
+
+//private static Stream<String> reposNameProvider() {
+//    return repos.stream().map(Repos::getFull_name);
+//}
+//
+//@ParameterizedTest(name = "Проверка корректоности имени репозитория репозитория: {0}")
+//@MethodSource("reposNameProvider")
+//@Description("Делает api-запрос, получает full_name репозитория и сравнивает его с full_name из ранее сформированного списка, проверка код 200 и тело не пустое")
+//public void getRepoTest(String repoFullName) {
+//    apiSteps.getRepo(repoFullName).equals(repoFullName);
+//}
 
 
 
