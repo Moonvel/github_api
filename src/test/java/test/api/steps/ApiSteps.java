@@ -1,7 +1,7 @@
-package git.api.selenide.steps;
+package test.api.steps;
 
-import git.api.selenide.helper.ApiHelper;
-import git.api.selenide.model.Repos;
+import test.api.helper.ApiHelper;
+import test.api.model.Repos;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
