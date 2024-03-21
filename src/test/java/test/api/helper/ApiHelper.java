@@ -1,6 +1,6 @@
-package git.api.selenide.helper;
+package test.api.helper;
 
-import git.api.selenide.properties.PropsHelper;
+import test.api.properties.PropsHelper;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;

@@ -1,4 +1,4 @@
-package git.api.selenide.model;
+package test.api.model;
 
 import lombok.Data;
 

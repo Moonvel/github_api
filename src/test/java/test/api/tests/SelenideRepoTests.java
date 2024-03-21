@@ -1,14 +1,13 @@
-package git.api.selenide.tests;
+package test.api.tests;
 
-import git.api.selenide.model.Repos;
-import git.api.selenide.steps.ApiSteps;
 import io.qameta.allure.Description;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import test.api.model.Repos;
+import test.api.steps.ApiSteps;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -32,7 +31,6 @@ public class SelenideRepoTests {
         repos = apiSteps.getRepos("selenide");
     }
 
-    @Disabled
     @ParameterizedTest(name = "Проверка корректоности имени репозитория репозитория")
     @MethodSource("reposProvider")
     @Description("Делает api-запрос, получает full_name репозитория и сравнивает его с full_name из ранее сформированного списка, проверки: код 200 и тело не пустое")

@@ -1,4 +1,4 @@
-package git.api.selenide.properties;
+package test.api.properties;
 
 import java.io.IOException;
 import java.util.Properties;
